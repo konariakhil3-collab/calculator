@@ -1,0 +1,25 @@
+<form method="post">
+    {% csrf_token %}
+
+    <label for="Num1">Enter number 1:</label>
+    <input type="text" name="Num1" required>
+    <br><br>
+
+    <label for="Num2">Enter number 2:</label>
+    <input type="text" name="Num2" required>
+    <br><br>
+
+    <label for="ch">Operation:</label>
+    <input type="text" name="ch" placeholder="1:Add 2:Sub 3:Mul 4:Div" required>
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% if error %}
+<h3 style="color:red;">{{ error }}</h3>
+{% endif %}
+
+{% if result is not None %}
+<h2>Result: {{ result }}</h2>
+{% endif %}
